@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Калькулятор.</title>
+</head>
+<body>
+	<form action="{% url 'calculator:calculate' %}" method="get">
+		{% csrf_token %}
+		<input type="text" name="num_1">
+		<input type="text" name="num_2">
+		<select name="sign">
+			<option>+</option>
+			<option>-</option>
+			<option>/</option>
+			<option>*</option>
+		</select>
+		<button type="submit">Решить</button>
+	</form>
+	<h2>Ответ: {{ answer }}</h2>
+</body>
+</html>
